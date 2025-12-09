@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Braden Barnum — Manufacturing Engineering Student</title>
+  <meta name="description" content="Resume and portfolio for an undergraduate Manufacturing Engineering student. Leadership, CAD (CSWA), Chinese, Python, Excel, SQL, VBA, web skills." />
+  <style>
+    * { box-sizing: border-box; }
+    html,body { height:100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#0f172a; background:linear-gradient(180deg,#f7fafc 0%, #ffffff 100%);}
+    a { color: #0b5fff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 980px; margin:32px auto; padding:28px; background:#fff; border-radius:12px; box-shadow: 0 6px 24px rgba(8,15,35,0.06); }
+    header { display:flex; gap:20px; align-items:center; }
+    .avatar {
+      width:110px; height:110px; border-radius:12px; background:linear-gradient(135deg,#acbbed,#ecfffb);
+      display:flex; align-items:center; justify-content:center; font-weight:700; color:#0b5fff; font-size:36px;
+      flex-shrink:0; border:5px #0b5fff
+    }
+    h1 { margin:0; font-size:22px; letter-spacing: -0.2px; }
+    .sub { color:#475569; margin-top:6px; font-size:14px; }
+
+    .grid { display:grid; grid-template-columns: 1fr 320px; gap:28px; margin-top:20px; }
+    @media (max-width:900px){ .grid{ grid-template-columns: 1fr; } .right-col { order: -1; } }
+
+    section { background: transparent; padding:0; }
+    .card { background:#f8fafc; border-radius:10px; padding:16px; }
+    .muted { color:#6b7280; font-size:14px; }
+
+    .timeline { margin-top:8px; }
+    .item { display:flex; gap:12px; padding:12px 0; border-bottom:1px dashed rgba(15,23,42,0.06); }
+    .item:last-child { border-bottom: none; }
+    .dot { width:12px; height:12px; border-radius:50%; background:#0b5fff; margin-top:6px; flex-shrink:0; }
+    .role { font-weight:600; font-size:15px; }
+    .date { font-size:13px; color:#64748b; }
+
+    .skills { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .skill { background:#eef2ff; color:#0b5fff; padding:6px 10px; border-radius:999px; font-weight:600; font-size:13px; }
+
+    .controls { display:flex; gap:10px; margin-top:12px; flex-wrap:wrap; }
+    .btn { padding:10px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:600; background:#0b5fff; color:white; box-shadow: 0 6px 18px rgba(11,91,255,0.12); }
+    .btn.ghost { background:transparent; color:#0b5fff; border:1px solid rgba(11,91,255,0.12); box-shadow:none; }
+    .download-note { font-size:13px; color:#475569; margin-top:8px; }
+
+    .contact-list { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+    .contact-row { display:flex; gap:8px; align-items:center; font-size:14px; color:#0f172a; }
+    footer { margin-top:22px; text-align:center; color:#64748b; font-size:13px; }
+
+    @media print {
+      body { background: white; }
+      .controls, .avatar { display:none; }
+      .container { box-shadow:none; border-radius:0; margin:0; padding:0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main" aria-labelledby="profile-name">
+    <header>
+      <div class="avatar" aria-hidden="true">
+                <img src="images/personPhoto.jpg" alt="Braden Barnum" width="90%">
+      </div>
+      <div style="flex:1;">
+        <h1 id="profile-name">Braden Barnum</h1> <!--NAME-->
+        <div class="sub">Undergraduate — Manufacturing Engineering, Brigham Young University</div>
+        <div class="muted" style="margin-top:8px;">Passionate about manufacturing processes, CAD, automation, and practical problem solving. Experienced in leadership, training, and cross-cultural communication.</div>
+        <div class="controls" role="toolbar" aria-label="controls">
+          <button class="btn" onclick="window.print()">Print / Save PDF</button>
+          <button class="btn ghost" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">Contact</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid" aria-label="Resume content">
+      <div>
+        <section aria-labelledby="about-heading" style="margin-top:18px;">
+          <h2 id="about-heading" style="margin:0 0 8px 0; font-size:16px;">About</h2>
+          <div class="card" role="article">
+            <p style="margin:0; color:#0f172a;">
+              Undergraduate Manufacturing Engineering student at Brigham Young University. I bring hands-on experience from retail and service roles, leadership and mentorship experience from missionary service, and technical skills including CAD (CSWA), Python, SQL, VBA, HTML, and advanced Excel. I speak Mandarin Chinese at a functional level based on language learning and community teaching experience.
+            </p>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE UPDATED BELOW -->
+        <section aria-labelledby="experience-heading" style="margin-top:18px;">
+          <h2 id="experience-heading" style="margin:0 0 8px 0; font-size:16px;">Experience</h2>
+          <div class="card timeline" role="list">
+
+            <!-- Missionary Mentor -->
+            <div class="item" role="listitem">
+              <div class="dot"></div>
+              <div>
+                <div class="role">Missionary Mentor — The Church of Jesus Christ of Latter-day Saints</div>
+                <div class="date">Aug 2025 — Jan 2026</div>
+                <div class="muted" style="margin-top:6px;">
+                  Mentored and trained missionaries on organizational standards, responsibilities, and effective teaching practices. Delivered structured training based on the Missionary Handbook and coached individuals in communication, planning, and personal development. Strengthened team culture through support, accountability, and example-led leadership.
+                </div>
+              </div>
+            </div>
+
+            <!-- Full Time Missionary -->
+            <div class="item" role="listitem">
+              <div class="dot"></div>
+              <div>
+                <div class="role">Full-time Missionary — San Francisco, CA</div>
+                <div class="date">Jan 2023 — Jan 2025</div>
+                <div class="muted" style="margin-top:6px;">
+                  Learned Mandarin Chinese and used it regularly in teaching, outreach, and community service. Taught lessons, provided service, and helped individuals set and work toward personal goals. Led and trained groups of up to 20 missionaries, coordinating weekly training meetings and providing performance feedback. Developed strong interpersonal, leadership, cross-cultural communication, and public speaking skills.
+                </div>
+              </div>
+            </div>
+
+            <!-- Walmart Parker CO -->
+            <div class="item" role="listitem">
+              <div class="dot"></div>
+              <div>
+                <div class="role">Walmart Associate — Stocking & Receiving (Parker, CO)</div>
+                <div class="date">June 2020 — Aug 2022</div>
+                <div class="muted" style="margin-top:6px;">
+                  Unloaded freight and stocked merchandise across multiple departments with speed and accuracy. Collaborated daily with a team of 8–12 associates to meet store readiness goals. Stepped into team-lead responsibilities after a supervisor injury, including delegating tasks and managing workflow. Ensured aisles were organized, safe, and customer-ready while assisting customers with product questions.
+                </div>
+              </div>
+            </div>
+
+            <!-- Jimmy Johns Parker CO -->
+            <div class="item" role="listitem">
+              <div class="dot"></div>
+              <div>
+                <div class="role">Inshop Worker — Jimmy John's (Parker, CO)</div>
+                <div class="date">June 2019 — March 2020</div>
+                <div class="muted" style="margin-top:6px;">
+                  Prepared sandwiches and completed customer orders quickly and accurately in a fast-paced environment. Maintained clean and organized workspaces while following strict food safety standards. Demonstrated strong customer service and conflict-resolution skills. Built early experience in teamwork, time management, and reliability in a demanding workplace.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section aria-labelledby="education-heading" style="margin-top:18px;">
+          <h2 id="education-heading" style="margin:0 0 8px 0; font-size:16px;">Education</h2>
+          <div class="card" role="article">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-weight:700;">Brigham Young University (BYU)</div>
+                <div class="muted">Undergraduate — Manufacturing Engineering (in progress)</div>
+              </div>
+              <div class="muted" style="text-align:right;">Current student</div>
+            </div>
+
+            <hr style="border:none;border-top:1px dashed rgba(15,23,42,0.06); margin:12px 0;" />
+
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-weight:700;">Legend High School</div>
+                <div class="muted">Graduated 2022</div>
+              </div>
+              <div class="muted" style="text-align:right;">High school diploma</div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="certs-heading" style="margin-top:18px;">
+          <h2 id="certs-heading" style="margin:0 0 8px 0; font-size:16px;">Certifications & Highlights</h2>
+          <div class="card">
+            <ul style="margin:8px 0 0 18px; color:#0f172a;">
+              <li>CSWA — Certified SOLIDWORKS Associate (CAD fundamentals)</li>
+              <li>Functional Mandarin Chinese — practical experience teaching and serving in San Francisco</li>
+              <li>Leadership experience: mentoring, training, and supervising teams of up to 20 people</li>
+            </ul>
+          </div>
+        </section>
+
+        <footer>
+        </footer>
+      </div>
+
+      <aside class="right-col">
+        <section aria-labelledby="skills-heading" style="margin-bottom:18px;">
+          <h3 id="skills-heading" style="margin:0 0 8px 0; font-size:15px;">Skills</h3>
+          <div class="card">
+            <div class="skills">
+              <span class="skill">Leadership</span>
+              <span class="skill">Mandarin (Chinese)</span>
+              <span class="skill">CAD (CSWA)</span>
+              <span class="skill">Python</span>
+              <span class="skill">HTML & CSS</span>
+              <span class="skill">SQL</span>
+              <span class="skill">VBA</span>
+              <span class="skill">Microsoft Excel (Advanced)</span>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="quick-contacts" style="margin-bottom:18px;">
+          <h3 id="quick-contacts" style="margin:0 0 8px 0; font-size:15px;">Contact</h3>
+          <div class="card contact-list">
+            <div class="contact-row"><strong>Email:</strong> <span class="muted">EMAIL@EMAIL.COM</span></div>
+            <div class="contact-row"><strong>Phone:</strong> <span class="muted">+(123) 456-7890</span></div>
+            <div class="contact-row"><strong>Location:</strong> <span class="muted">Provo, UT · Formerly Parker, CO & San Francisco, CA</span></div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+.unfinished{
+    color:red;
+    font-weight:bold;
+}
+.center{
+    text-align: center;
+}
+img{
+    border:3px solid black ;
+    display:block;
+    margin:0 auto;
+}
+.heading{
+    text-decoration: underline ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#navigation{
+    top:15px;
+    
+    background-color: rgb(246, 213, 163);
+    border:5px solid rgb(214, 177, 122);
+    z-index: 2;
+}
+#self{
+    top:290px;
+    z-index: 2;
+    background-color: rgb(246, 213, 163);
+    border:5px solid rgb(214, 177, 122);
+}
+.smallerindent{
+    padding-inline-start: 15px; /* Adjusts the indentation of the entire unordered list */
+
+}
+.bold{
+    font-weight: bold;
+}
+.big{
+    font-size: 15px;
+}
+.right{
+    right:10px;
+    position:fixed;
+    padding:10px;
+    width:15%;
+}
+.left{
+    left:10px;
+    width:75%;
+    background-color: blanchedalmond;
+}
+body{
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.offcolor{
+    background-color: rgb(241, 207, 164);
+    padding:8px;
+}
+.footer{
+    bottom: 0px;
+    height: 40px;
+    left:15px;
+    right: 15px;
+    position: fixed;
+    background-color: rgb(246, 213, 163);
+    border:5px solid rgb(214, 177, 122);
+    text-align: center;
+}

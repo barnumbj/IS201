@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Precision Slice Game</title>
+<style>
+    body {
+        background: #111;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 40px;
+    }
+    canvas {
+        background: #222;
+        display: block;
+        margin: 20px auto;
+        border: 3px solid #fff;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+<h1>Precision Slice Game</h1>
+<canvas id="gameCanvas" width="600" height="200"></canvas>
+<script>
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+
+let barX = 0;
+let barSpeed = 3;
+let zoneWidth = 120;
+let zoneCenter = 300;
+let score = 0;
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#4CAF50";
+    ctx.fillRect(zoneCenter - zoneWidth / 2, 50, zoneWidth, 100);
+
+    ctx.fillStyle = "#FF4444";
+    ctx.fillRect(barX, 60, 10, 80);
+
+    ctx.fillStyle = "white";
+    ctx.font = "20px Arial";
+    ctx.fillText("Score: " + score, 10, 30);
+}
+
+function update() {
+    barX += barSpeed;
+
+    if (barX > canvas.width || barX < 0) {
+        barSpeed *= -1;
+    }
+
+    draw();
+    requestAnimationFrame(update);
+}
+
+window.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+        const inZone = barX > zoneCenter - zoneWidth / 2 && barX < zoneCenter + zoneWidth / 2;
+
+        if (inZone) {
+            score++;
+            zoneWidth *= 0.90;
+            if (zoneWidth < 20) zoneWidth = 20;
+            barSpeed *= 1.05;
+        } else {
+            score = 0;
+            zoneWidth = 120;
+            barSpeed = 3;
+        }
+    }
+});
+
+update();
+</script>
+<p>Press spacebar when the bar is in the green!</p>
+</body>
+</html>

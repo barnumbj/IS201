@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -10,18 +11,23 @@
 
   <style>
     :root {
-      --bg:#061226;
-      --panel:#0f1724;
-      --accent:#2ee6b6;
-      --accent2:#ffd166;
-      --muted:#b7c2cf;
+      --bg: #061226;
+      --panel: #0f1724;
+      --accent: #2ee6b6;
+      --accent2: #ffd166;
+      --muted: #b7c2cf;
     }
 
-    * { box-sizing:border-box; margin:0; padding:0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: "IBM Plex Sans", sans-serif;
-      background: radial-gradient(ellipse at 10% 10%, rgba(46,230,182,0.06) 0%, transparent 10%),
-                  linear-gradient(180deg, #071326 0%, #03121b 100%);
+      background: radial-gradient(ellipse at 10% 10%, rgba(46, 230, 182, 0.06) 0%, transparent 10%),
+        linear-gradient(180deg, #071326 0%, #03121b 100%);
       color: var(--muted);
       padding: 28px;
       line-height: 1.55;
@@ -31,119 +37,173 @@
       position: relative;
       padding: 22px;
       border-radius: 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
-      box-shadow: 0 8px 30px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
-      border: 3px solid rgba(255,255,255,0.03);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.06));
+      box-shadow: 0 8px 30px rgba(2, 6, 23, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+      border: 3px solid rgba(255, 255, 255, 0.03);
       overflow: hidden;
     }
+
     .crt::after {
-      content:'';
-      position:absolute;left:0;right:0;top:0;bottom:0;
-      background-image: linear-gradient(transparent 50%, rgba(0,0,0,0.05) 50%);
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-image: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.05) 50%);
       background-size: 100% 4px;
       mix-blend-mode: overlay;
-      opacity:.45;
+      opacity: .45;
     }
 
-    header { display:flex; gap:18px; align-items:center; margin-bottom:18px; }
-    .logo {
-      width:80px; height:80px; border-radius:12px;
-      background:linear-gradient(135deg, rgba(46,230,182,0.06), rgba(255,209,102,0.04));
-      border:4px solid rgba(46,230,182,0.06);
-      display:flex; align-items:center; justify-content:center;
-      font-weight:600; color:var(--accent); font-size:20px;
+    header {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 18px;
     }
-    h1 { color:var(--accent); font-size:26px; font-weight:600; }
-    p.lead { margin-top:8px; font-size:14px; max-width:900px; }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(46, 230, 182, 0.06), rgba(255, 209, 102, 0.04));
+      border: 4px solid rgba(46, 230, 182, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+    h1 {
+      color: var(--accent);
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    p.lead {
+      margin-top: 8px;
+      font-size: 14px;
+      max-width: 900px;
+    }
 
     main {
-      display:grid;
+      display: grid;
       grid-template-columns: 1fr 420px;
-      gap:18px;
-      margin-top:14px;
+      gap: 18px;
+      margin-top: 14px;
     }
 
     .panel {
-      background:rgba(255,255,255,0.02);
-      padding:18px;
-      border-radius:10px;
-      border:2px solid rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.02);
+      padding: 18px;
+      border-radius: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.03);
     }
 
     /* Steps */
     ol.steps {
-      list-style:none;
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      margin-top:8px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
     }
+
     ol.steps li {
-      display:grid;
-      grid-template-columns:60px 1fr;
-      gap:12px;
-      background:rgba(0,0,0,0.2);
-      padding:12px;
-      border-radius:8px;
-      border:1px dashed rgba(255,255,255,0.04);
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 12px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px dashed rgba(255, 255, 255, 0.04);
     }
+
     .num {
-      width:52px; height:52px;
-      border-radius:8px;
-      background:rgba(255,255,255,0.03);
-      border:3px solid rgba(255,255,255,0.05);
-      display:flex; align-items:center; justify-content:center;
-      color:var(--accent2);
-      font-weight:600;
-      font-size:16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 3px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent2);
+      font-weight: 600;
+      font-size: 16px;
     }
+
     ol.steps li h3 {
-      font-size:15px;
-      color:var(--accent);
-      margin-bottom:6px;
+      font-size: 15px;
+      color: var(--accent);
+      margin-bottom: 6px;
     }
-    ol.steps li p { font-size:14px; }
+
+    ol.steps li p {
+      font-size: 14px;
+    }
 
     /* Video */
     .video-wrap {
-      position:relative;
-      padding-top:56.25%; /* 16:9 */
-      border-radius:8px;
-      overflow:hidden;
-      border:2px solid rgba(255,255,255,0.03);
-      margin-bottom:14px;
+      position: relative;
+      padding-top: 56.25%;
+      /* 16:9 */
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.03);
+      margin-bottom: 14px;
     }
+
     .video-wrap iframe {
-      position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .badge {
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:12px;
-      color:var(--accent);
-      background:rgba(46,230,182,0.1);
-      border:1px solid rgba(255,255,255,0.03);
-      margin-bottom:10px;
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--accent);
+      background: rgba(46, 230, 182, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      margin-bottom: 10px;
     }
 
+    .crt::after {
+      pointer-events: none;
+    }s
+
     ul.check {
-      list-style:none;
-      display:grid; gap:10px;
-      font-size:14px;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      font-size: 14px;
     }
+
     .kbd {
-      background:#021018;
-      padding:4px 6px;
-      border-radius:4px;
-      border:1px solid rgba(255,255,255,0.04);
-      font-size:12px;
+      background: #021018;
+      padding: 4px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 12px;
     }
 
     @media(max-width:900px) {
-      main { grid-template-columns:1fr; }
-      .video-wrap { order:-1; }
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .video-wrap {
+        order: -1;
+      }
     }
   </style>
 </head>
@@ -168,7 +228,8 @@
             <div class="num">1</div>
             <div>
               <h3>Position the Printer</h3>
-              <p>Place your printer on a stable, level surface with room for the bed to move freely. Ensure good ventilation and easy access to the spool holder.</p>
+              <p>Place your printer on a stable, level surface with room for the bed to move freely. Ensure good
+                ventilation and easy access to the spool holder.</p>
             </div>
           </li>
 
@@ -176,7 +237,8 @@
             <div class="num">2</div>
             <div>
               <h3>Check Mechanics</h3>
-              <p>Verify belts have firm tension, rods move smoothly, and the print bed slides freely. Tighten any screws that loosened during shipping.</p>
+              <p>Verify belts have firm tension, rods move smoothly, and the print bed slides freely. Tighten any screws
+                that loosened during shipping.</p>
             </div>
           </li>
 
@@ -184,7 +246,8 @@
             <div class="num">3</div>
             <div>
               <h3>Level the Bed</h3>
-              <p>Use your printer’s auto-leveling routine or manually adjust using the “paper test.” Move the nozzle to each corner and ensure mild paper drag between nozzle and bed.</p>
+              <p>Use your printer’s auto-leveling routine or manually adjust using the “paper test.” Move the nozzle to
+                each corner and ensure mild paper drag between nozzle and bed.</p>
             </div>
           </li>
 
@@ -192,7 +255,8 @@
             <div class="num">4</div>
             <div>
               <h3>Load Filament</h3>
-              <p>Heat the nozzle to the filament’s recommended temperature (e.g., 200°C for PLA), trim the filament’s end at an angle, and feed it through the extruder until it extrudes cleanly.</p>
+              <p>Heat the nozzle to the filament’s recommended temperature (e.g., 200°C for PLA), trim the filament’s
+                end at an angle, and feed it through the extruder until it extrudes cleanly.</p>
             </div>
           </li>
 
@@ -201,14 +265,15 @@
             <div>
               <h3>Adjust the Z-Offset</h3>
               <p>
-                Your Z-offset determines how close the nozzle is to the bed during printing.  
+                Your Z-offset determines how close the nozzle is to the bed during printing.
                 <br><br>
                 <strong>How to set it:</strong><br>
                 • Start a built-in “first layer” or “Z-offset” calibration.<br>
                 • The printer will move the nozzle to the bed center.<br>
                 • Adjust the Z-offset value:
-                <br>– If the filament looks too thin / nozzle scraping → <strong>raise</strong> the nozzle (increase offset).  
-                <br>– If the filament doesn’t stick → <strong>lower</strong> the nozzle (decrease offset).  
+                <br>– If the filament looks too thin / nozzle scraping → <strong>raise</strong> the nozzle (increase
+                offset).
+                <br>– If the filament doesn’t stick → <strong>lower</strong> the nozzle (decrease offset).
                 <br><br>
                 Your ideal Z-offset produces a smooth first layer with slightly squished lines that touch each other.
               </p>
@@ -219,7 +284,8 @@
             <div class="num">6</div>
             <div>
               <h3>Slicer Setup</h3>
-              <p>Use a beginner preset (Cura/PrusaSlicer): 0.2 mm layer height, 20–60 mm/s speed, 200°C nozzle, 60°C bed (if used). Import your printer profile if available.</p>
+              <p>Use a beginner preset (Cura/PrusaSlicer): 0.2 mm layer height, 20–60 mm/s speed, 200°C nozzle, 60°C bed
+                (if used). Import your printer profile if available.</p>
             </div>
           </li>
 
@@ -227,7 +293,8 @@
             <div class="num">7</div>
             <div>
               <h3>Test Print</h3>
-              <p>Print a calibration square or Benchy. Watch the first 2 layers closely — stop the print if lines don’t stick, are too thin, or if blobs appear.</p>
+              <p>Print a calibration square or Benchy. Watch the first 2 layers closely — stop the print if lines don’t
+                stick, are too thin, or if blobs appear.</p>
             </div>
           </li>
         </ol>
@@ -238,12 +305,9 @@
         <div class="panel">
           <div class="badge">TUTORIAL VIDEO</div>
           <div class="video-wrap">
-            <iframe src="https://www.youtube.com/embed/T-Z3GmM20JM"
-              title="3D printer setup tutorial"
+            <iframe src="https://www.youtube.com/embed/T-Z3GmM20JM" title="3D printer setup tutorial"
               allowfullscreen></iframe>
           </div>
-
-          <p style="font-size:13px;">Replace <span class="kbd">VIDEO_ID</span> with any YouTube tutorial ID.</p>
 
           <div class="badge">Quick Checklist</div>
           <ul class="check">
@@ -258,16 +322,17 @@
         <div class="panel" style="margin-top:12px;">
           <div class="badge">PRO TIPS</div>
           <p style="font-size:14px;">
-            • PLA: start 200°C nozzle / 60°C bed.  
-            • If corners lift, use a brim or raise bed temp.  
-            • Dry filament = better quality.  
+            • PLA: start 200°C nozzle / 60°C bed.
+            • If corners lift, use a brim or raise bed temp.
+            • Dry filament = better quality.
             • Clean nozzle and bed regularly.
           </p>
         </div>
       </aside>
     </main>
   </div>
-      <p>To go back to the last page, click <a href="scratch.html" target="_blank">here</a>.</p>
+  <p>To go back to the last page, click <a href="scratch.html" target="_blank">here</a>.</p>
 
 </body>
+
 </html>
